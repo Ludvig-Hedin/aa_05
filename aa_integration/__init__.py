@@ -10,12 +10,17 @@ COMPONENT_MODULES = {
     "langchain": os.path.join(COMPONENTS_PATH, "langchain"),
     "llama_cpp": os.path.join(COMPONENTS_PATH, "llama-cpp-python"),
     "browser_use": os.path.join(COMPONENTS_PATH, "browser-use"),
+    "browser_web_ui": os.path.join(COMPONENTS_PATH, "browser-web-ui"),
     "researcher": os.path.join(COMPONENTS_PATH, "gpt-researcher"),
     "jobs_applier": os.path.join(COMPONENTS_PATH, "jobs-applier"),
     "openmanus": os.path.join(COMPONENTS_PATH, "openmanus"),
     "agent_zero": os.path.join(COMPONENTS_PATH, "agent-zero"),
     "csm": os.path.join(COMPONENTS_PATH, "csm"),
     "deepseek": os.path.join(COMPONENTS_PATH, "deepseek-r1"),
+    "mem0": os.path.join(COMPONENTS_PATH, "mem0"),
+    "n8n": os.path.join(COMPONENTS_PATH, "n8n"),
+    "supabase": os.path.join(COMPONENTS_PATH, "supabase"),
+    "wan_video": os.path.join(COMPONENTS_PATH, "wan-video"),
 }
 
 # Add paths to Python path
@@ -38,7 +43,7 @@ class AAIntegration:
             with open(config_path, 'r') as f:
                 return json.load(f)
         return {
-            "enabled_components": ["autogpt", "langchain", "llama_cpp", "browser_use"],
+            "enabled_components": ["autogpt", "langchain", "llama_cpp", "browser_use", "mem0"],
             "api_keys": {},
             "model_paths": {},
             "default_agent": "autogpt"
@@ -67,6 +72,16 @@ class AAIntegration:
                 self.components[component_name] = self._import_llama_cpp()
             elif component_name == "browser_use":
                 self.components[component_name] = self._import_browser_use()
+            elif component_name == "mem0":
+                self.components[component_name] = self._import_mem0()
+            elif component_name == "researcher":
+                self.components[component_name] = self._import_researcher()
+            elif component_name == "n8n":
+                self.components[component_name] = self._import_n8n()
+            elif component_name == "supabase":
+                self.components[component_name] = self._import_supabase()
+            elif component_name == "wan_video":
+                self.components[component_name] = self._import_wan_video()
             # Add other components here...
             
             return True
@@ -94,6 +109,31 @@ class AAIntegration:
         # Implementation for browser-use integration
         return {"status": "loaded"}
     
+    def _import_mem0(self):
+        """Import mem0 components for memory management"""
+        # Implementation for mem0 integration
+        return {"status": "loaded"}
+    
+    def _import_researcher(self):
+        """Import researcher components"""
+        # Implementation for gpt-researcher integration
+        return {"status": "loaded"}
+    
+    def _import_n8n(self):
+        """Import n8n workflow automation components"""
+        # Implementation for n8n integration
+        return {"status": "loaded"}
+    
+    def _import_supabase(self):
+        """Import Supabase database components"""
+        # Implementation for Supabase integration
+        return {"status": "loaded"}
+    
+    def _import_wan_video(self):
+        """Import video processing components"""
+        # Implementation for Wan Video integration
+        return {"status": "loaded"}
+    
     # Add more component import methods as needed...
     
     def get_agent(self, agent_type: str = None):
@@ -104,6 +144,8 @@ class AAIntegration:
             return self._create_autogpt_agent()
         elif agent_type == "langchain" and "langchain" in self.components:
             return self._create_langchain_agent()
+        elif agent_type == "researcher" and "researcher" in self.components:
+            return self._create_researcher_agent()
         # Add other agent types...
         
         raise ValueError(f"Agent type not supported or not loaded: {agent_type}")
@@ -117,5 +159,10 @@ class AAIntegration:
         """Create a LangChain agent"""
         # Implementation for creating LangChain agent
         return {"agent_type": "langchain"}
+    
+    def _create_researcher_agent(self):
+        """Create a Researcher agent"""
+        # Implementation for creating Researcher agent
+        return {"agent_type": "researcher"}
     
     # Add more agent creation methods as needed...
