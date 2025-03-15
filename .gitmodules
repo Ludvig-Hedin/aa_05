@@ -37,3 +37,6 @@
 [submodule "components/deepseek-r1"]
 	path = components/deepseek-r1
 	url = https://github.com/deepseek-ai/DeepSeek-R1.git
+[submodule "components/mem0"]
+	path = components/mem0
+	url = https://github.com/mem0ai/mem0-chrome-extension.git
