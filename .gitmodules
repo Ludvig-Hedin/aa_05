@@ -1,0 +1,39 @@
+[submodule "components/autogpt"]
+	path = components/autogpt
+	url = https://github.com/Significant-Gravitas/AutoGPT.git
+[submodule "components/supabase"]
+	path = components/supabase
+	url = https://github.com/supabase/supabase.git
+[submodule "components/n8n"]
+	path = components/n8n
+	url = https://github.com/n8n-io/n8n.git
+[submodule "components/llama-cpp-python"]
+	path = components/llama-cpp-python
+	url = https://github.com/abetlen/llama-cpp-python.git
+[submodule "components/browser-use"]
+	path = components/browser-use
+	url = https://github.com/browser-use/browser-use.git
+[submodule "components/browser-web-ui"]
+	path = components/browser-web-ui
+	url = https://github.com/browser-use/web-ui.git
+[submodule "components/gpt-researcher"]
+	path = components/gpt-researcher
+	url = https://github.com/assafelovic/gpt-researcher.git
+[submodule "components/wan-video"]
+	path = components/wan-video
+	url = https://github.com/Wan-Video/Wan2.1.git
+[submodule "components/jobs-applier"]
+	path = components/jobs-applier
+	url = https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk.git
+[submodule "components/openmanus"]
+	path = components/openmanus
+	url = https://github.com/mannaandpoem/OpenManus.git
+[submodule "components/agent-zero"]
+	path = components/agent-zero
+	url = https://github.com/frdel/agent-zero.git
+[submodule "components/csm"]
+	path = components/csm
+	url = https://github.com/SesameAILabs/csm.git
+[submodule "components/deepseek-r1"]
+	path = components/deepseek-r1
+	url = https://github.com/deepseek-ai/DeepSeek-R1.git
